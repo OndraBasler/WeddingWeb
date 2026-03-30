@@ -1,0 +1,14 @@
+site:
+  title: "Svatební web"
+
+server:
+  files:
+    dev:
+      contentRoot: "build/processedResources/js/main/public"
+      script: "build/kotlin-webpack/js/developmentExecutable/svatba.js"
+      api: "build/libs/svatba.jar"
+    prod:
+      script: "build/kotlin-webpack/js/productionExecutable/svatba.js"
+      siteRoot: ".kobweb/site"
+
+  port: 8080
