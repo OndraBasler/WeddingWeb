@@ -1,4 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.link
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -14,20 +15,17 @@ kobweb {
     app {
         index {
             description.set("Powered by Kobweb")
+            head.add {
+                link(rel = "stylesheet", href = "/fonts/faces.css")
+            }
         }
     }
 }
 
 kotlin {
-    // This example is frontend only. However, for a fullstack app, you can uncomment the includeServer parameter
-    // and the `jvmMain` source set below.
-    configAsKobwebApplication("svatba" /*, includeServer = true*/)
+    configAsKobwebApplication("svatba")
 
     sourceSets {
-//        commonMain.dependencies {
-//          // Add shared dependencies between JS and JVM here if building a fullstack app
-//        }
-
         jsMain.dependencies {
             implementation(libs.compose.runtime)
             implementation(libs.compose.html.core)
