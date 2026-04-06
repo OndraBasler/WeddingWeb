@@ -30,25 +30,18 @@ object SitePalettes {
             accent = Color.rgb(0xFCBA03),
         )
     )
-    val dark = SitePalette(
-        nearBackground = Color.rgb(0x13171F),
-        brand = SitePalette.Brand(
-            primary = Color.rgb(0x3C83EF),
-            accent = Color.rgb(0xF3DB5B),
-        )
-    )
 }
 
 fun ColorMode.toSitePalette(): SitePalette {
     return when (this) {
         ColorMode.LIGHT -> SitePalettes.light
-        ColorMode.DARK -> SitePalettes.dark
+        ColorMode.DARK -> SitePalettes.light
     }
 }
 
 @InitSilk
 fun initTheme(ctx: InitSilkContext) {
-    ctx.theme.palettes.light.background = Color.rgb(0xFAFAFA)
+    ctx.theme.palettes.light.background = Color.rgb(0xFBFCF7)
     ctx.theme.palettes.light.color = Colors.Black
     ctx.theme.palettes.dark.background = Color.rgb(0x06080B)
     ctx.theme.palettes.dark.color = Colors.White

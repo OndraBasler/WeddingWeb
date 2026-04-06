@@ -4,13 +4,11 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.core.init.InitRoute
 import com.varabyte.kobweb.core.init.InitRouteContext
 import com.varabyte.kobweb.core.layout.Layout
 import cz.bohouskovi.svatba.components.sections.*
-import org.jetbrains.compose.web.css.vh
 
 @InitRoute
 fun initHomePage(ctx: InitRouteContext) {
@@ -20,13 +18,17 @@ fun initHomePage(ctx: InitRouteContext) {
 @Layout(".components.layouts.PageLayout")
 @Composable
 fun HomePage() {
-    Column(Modifier.fillMaxWidth().padding(bottom = 20.vh)) {
+    Column(Modifier.fillMaxWidth()) {
+        DecorationImage("wedding_decoration_kno.webp")
         UvodSection()
         ONasSection()
+        DecorationImage("wedding_decoration_apples.webp")
         InformaceSection()
         HarmonogramSection()
         RsvpSection()
+        DecorationImage("wedding_decoration_field.webp")
         GalerieSection()
         KontaktySection()
+        DecorationImage("wedding_decoration_grass.webp")
     }
 }

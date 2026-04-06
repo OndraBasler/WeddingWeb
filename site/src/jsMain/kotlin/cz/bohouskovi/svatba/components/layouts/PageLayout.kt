@@ -1,6 +1,7 @@
 package cz.bohouskovi.svatba.components.layouts
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.ColumnScope
@@ -14,22 +15,23 @@ import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.toAttrs
 import cz.bohouskovi.svatba.components.sections.Footer
 import cz.bohouskovi.svatba.components.sections.NavHeader
+import kotlinx.browser.document
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.vh
 import org.jetbrains.compose.web.dom.Div
 
 val PageContentStyle = CssStyle {
-    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, top = 4.cssRem) }
+    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem) }
     Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
 }
 
 @Composable
 @Layout
 fun PageLayout(ctx: PageContext, content: @Composable ColumnScope.() -> Unit) {
-//    LaunchedEffect(Unit) {
-//        document.title = "Kamča & Ondra"
-//    }
+    LaunchedEffect(Unit) {
+        document.title = "Kamča & Ondra"
+    }
 
     Box(
         Modifier
