@@ -70,27 +70,10 @@ jobs:
           cd site
           ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
 
-      - name: Prepare GitHub Pages content
-        run: |
-          rm -rf pages-artifact
-          mkdir -p pages-artifact
-
-          if [ -d site/.kobweb/site ]; then
-            echo "Using export at site/.kobweb/site"
-            cp -R site/.kobweb/site/. pages-artifact/
-          elif [ -d .kobweb/site ]; then
-            echo "Using export at .kobweb/site"
-            cp -R .kobweb/site/. pages-artifact/
-          else
-            echo "Could not find exported site directory"
-            find . -type d -name site | head -n 30
-            exit 1
-          fi
-
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: pages-artifact
+          path: site/.kobweb/site
 
   deploy:
     environment:
