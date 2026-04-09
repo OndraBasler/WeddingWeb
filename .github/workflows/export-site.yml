@@ -2,6 +2,9 @@ name: Export Kobweb site
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   export_and_upload:
