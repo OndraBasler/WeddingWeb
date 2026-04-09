@@ -10,7 +10,7 @@ fun FlexBoxLayout(
     content: ContentBuilder<HTMLDivElement>
 ) {
     Div(
-        attrs = { attr("style", "display:flex;flex-wrap:wrap;") },
+        attrs = { attr("style", "display:flex;flex-wrap:wrap;justify-content:center;") },
         content = content
     )
 }

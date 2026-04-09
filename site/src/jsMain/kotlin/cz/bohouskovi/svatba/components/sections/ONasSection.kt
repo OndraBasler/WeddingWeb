@@ -29,6 +29,7 @@ private fun AboutPhotoItem(src: String) {
 fun ONasSection() {
     Column(
         modifier = Modifier
+            .fillMaxWidth()
             .id("o-nas")
             .textAlign(TextAlign.Center),
         horizontalAlignment = Alignment.CenterHorizontally
