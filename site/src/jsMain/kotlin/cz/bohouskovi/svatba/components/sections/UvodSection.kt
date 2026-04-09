@@ -35,7 +35,7 @@ private fun UvodInfoItem(iconSrc: String, text: String) {
 @Composable
 fun UvodSection() {
     Column(
-        modifier = Modifier.id("uvod"),
+        modifier = Modifier.fillMaxWidth().id("uvod"),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
