@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - feature/export-site
 
 permissions:
   contents: read
@@ -68,7 +69,7 @@ jobs:
       - name: Run export
         run: |
           cd site
-          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --layout static
+          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
 
       - name: Upload site
         uses: actions/upload-artifact@v4
