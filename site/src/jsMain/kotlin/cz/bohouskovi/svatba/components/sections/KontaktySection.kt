@@ -48,7 +48,7 @@ private fun WitnessItem(
 @Composable
 fun KontaktySection() {
     Column(
-        modifier = Modifier.id("kontakty"),
+        modifier = Modifier.fillMaxWidth().id("kontakty"),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
