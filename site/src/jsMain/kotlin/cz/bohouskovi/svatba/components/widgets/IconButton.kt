@@ -5,9 +5,9 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.setVariable
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
-import org.jetbrains.compose.web.css.em
 import cz.bohouskovi.svatba.CircleButtonVariant
 import cz.bohouskovi.svatba.UncoloredButtonVariant
+import org.jetbrains.compose.web.css.em
 
 @Composable
 fun IconButton(onClick: () -> Unit, content: @Composable () -> Unit) {

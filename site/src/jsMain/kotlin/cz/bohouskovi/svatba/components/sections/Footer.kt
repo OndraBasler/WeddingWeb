@@ -16,10 +16,10 @@ import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.style.vars.color.ColorVar
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
+import cz.bohouskovi.svatba.toSitePalette
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.dom.Span
-import cz.bohouskovi.svatba.toSitePalette
 
 val FooterStyle = CssStyle.base {
     Modifier

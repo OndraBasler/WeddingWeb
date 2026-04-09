@@ -10,7 +10,6 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
 import com.varabyte.kobweb.silk.components.icons.MoonIcon
@@ -31,9 +30,9 @@ import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
-import org.jetbrains.compose.web.css.*
 import cz.bohouskovi.svatba.components.widgets.IconButton
 import cz.bohouskovi.svatba.toSitePalette
+import org.jetbrains.compose.web.css.*
 
 val NavHeaderStyle = CssStyle.base {
     Modifier.fillMaxWidth().padding(1.cssRem)
@@ -46,17 +45,13 @@ private fun NavLink(path: String, text: String) {
 
 @Composable
 private fun MenuItems() {
-    NavLink("/", "Home")
-    NavLink("/about", "About")
-}
-
-@Composable
-private fun ColorModeButton() {
-    var colorMode by ColorMode.currentState
-    IconButton(onClick = { colorMode = colorMode.opposite },) {
-        if (colorMode.isLight) MoonIcon() else SunIcon()
-    }
-    Tooltip(ElementTarget.PreviousSibling, "Toggle color mode", placement = PopupPlacement.BottomRight)
+    NavLink("#uvod", "Úvod")
+    NavLink("#o-nas", "O nás")
+    NavLink("#informace", "Informace")
+    NavLink("#harmonogram", "Harmonogram")
+    NavLink("#rsvp", "RSVP")
+    NavLink("#galerie", "Galerie")
+    NavLink("#kontakty", "Kontakty")
 }
 
 @Composable
@@ -100,16 +95,10 @@ enum class SideMenuState {
 @Composable
 fun NavHeader() {
     Row(NavHeaderStyle.toModifier(), verticalAlignment = Alignment.CenterVertically) {
-        Link("https://kobweb.varabyte.com") {
-            // Block display overrides inline display of the <img> tag, so it calculates centering better
-            Image("/kobweb-logo.png", "Kobweb Logo", Modifier.height(2.cssRem).display(DisplayStyle.Block))
-        }
-
         Spacer()
 
         Row(Modifier.gap(1.5.cssRem).displayIfAtLeast(Breakpoint.MD), verticalAlignment = Alignment.CenterVertically) {
             MenuItems()
-            ColorModeButton()
         }
 
         Row(
@@ -121,8 +110,7 @@ fun NavHeader() {
         ) {
             var menuState by remember { mutableStateOf(SideMenuState.CLOSED) }
 
-            ColorModeButton()
-            HamburgerButton(onClick =  { menuState = SideMenuState.OPEN })
+            HamburgerButton(onClick = { menuState = SideMenuState.OPEN })
 
             if (menuState != SideMenuState.CLOSED) {
                 SideMenu(
@@ -167,7 +155,10 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
                 horizontalAlignment = Alignment.End
             ) {
                 CloseButton(onClick = { close() })
-                Column(Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem), horizontalAlignment = Alignment.End) {
+                Column(
+                    Modifier.padding(right = 0.75.cssRem).gap(1.5.cssRem).fontSize(1.4.cssRem),
+                    horizontalAlignment = Alignment.End
+                ) {
                     MenuItems()
                 }
             }
