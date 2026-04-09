@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - master
+      - feature/export-site
 
 permissions:
   contents: read
@@ -30,7 +31,7 @@ jobs:
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 11
+          java-version: 21
 
       # When projects are created on Windows, the executable bit is sometimes lost. So set it back just in case.
       - name: Ensure Gradle is executable
@@ -64,19 +65,13 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Run export
         run: |
           cd site
-          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --layout static
-
-      - name: Upload site
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: site/.kobweb/site/
-          if-no-files-found: error
-          retention-days: 1
+          ../kobweb-${{ env.KOBWEB_CLI_VERSION }}/bin/kobweb export --notty --layout static
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
