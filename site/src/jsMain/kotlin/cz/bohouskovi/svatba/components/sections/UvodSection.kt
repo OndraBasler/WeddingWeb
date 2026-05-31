@@ -39,13 +39,13 @@ fun UvodSection() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Místo") }
+            H6 { Text("Kdy a kde") }
         }
 
         FlexBoxLayout {
             UvodInfoItem(
                 iconSrc = "ic_clock_48.svg",
-                text = "22. srpna 2026\nv XX:XX hodin"
+                text = "22. – 23. 8. 2026"
             )
             UvodInfoItem(
                 iconSrc = "ic_location_pin_48.svg",

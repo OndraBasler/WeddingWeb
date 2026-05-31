@@ -40,6 +40,14 @@ fun initSiteStyles(ctx: InitSilkContext) {
             .lineHeight(1.5)
     }
 
+    ctx.stylesheet.registerStyleBase("h6") {
+        Modifier.margin { bottom(0.5.cssRem) }
+    }
+
+    ctx.stylesheet.registerStyleBase("p") {
+        Modifier.textAlign(TextAlign.Center)
+    }
+
     // Silk dividers only extend 90% by default; we want full width dividers in our site
     ctx.theme.modifyStyleBase(HorizontalDividerStyle) {
         Modifier.fillMaxWidth()

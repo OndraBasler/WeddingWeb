@@ -24,6 +24,8 @@ fun HomePage() {
         ONasSection()
         DecorationImage("wedding_decoration_apples.webp")
         InformaceSection()
+        TransportInfoSection()
+        AccomodationSection()
         HarmonogramSection()
         RsvpSection()
         DecorationImage("wedding_decoration_field.webp")

@@ -42,8 +42,7 @@ fun ONasSection() {
             attr("style", "max-width:48rem;margin:0 0 1.5rem 0;")
         }) {
             Text(
-                "Jsme nevěsta a ženich, kteří se rozhodli říct si své ano obklopeni rodinou a přáteli. " +
-                    "Těšíme se, že s vámi oslavíme tento výjimečný den plný radosti, lásky a krásných vzpomínek."
+                "V pohádkách musí princ překonat devatero řek a devatero hor, ale Ondrovi stačilo přejít Stodůlecký rybník a odvážit se na Velkou horu Ohradu, aby poznal Kamču."
             )
         }
 

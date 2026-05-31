@@ -25,7 +25,6 @@ private fun WitnessItem(
     imageSrc: String,
     name: String,
     description: String,
-    phone: String,
 ) {
     Column(
         modifier = WitnessItemStyle,
@@ -39,9 +38,6 @@ private fun WitnessItem(
         })
         H3 { Text(name) }
         P { Text(description) }
-        A(href = "tel:$phone") {
-            Text(phone)
-        }
     }
 }
 
@@ -54,19 +50,18 @@ fun KontaktySection() {
         Div(HeadlineTextStyle.toAttrs()) {
             H6 { Text("Kontakty") }
         }
+        P { Text("Pokud byste měli jakékoliv dotazy k čemukoliv a svědci zrovna nepodepisovali svatební archy, tak vám rádi pomůžou.") }
 
         FlexBoxLayout {
             WitnessItem(
-                imageSrc = "https://picsum.photos/id/1005/400/400",
-                name = "Svědek ženicha",
-                description = "Pomůže se vším kolem ženicha během svatebního dne.",
-                phone = "+420 777 123 456"
+                imageSrc = "tomik.png",
+                name = "Tomáš Pavlín - svědek ženicha",
+                description = "S Tomíkem (prosím, oslovujte ho tak) se známe od střední. Společně jsme velcí odborníci na přetváření Silvestrovských chat v sauny a pojízdných aut v nepojízdná. Taky jsme proluštili nespočet letních nocí, takže pokud byste potřebovali poradit s luštěním svatební šifry, obraťte se na něj!",
             )
             WitnessItem(
-                imageSrc = "https://picsum.photos/id/1027/400/400",
-                name = "Svědkyně nevěsty",
-                description = "Pomůže se vším kolem nevěsty během svatebního dne.",
-                phone = "+420 777 654 321"
+                imageSrc = "zuzka.png",
+                name = "Zuzka Tipková - svědkyně nevěsty",
+                description = "Se Zuzkou se známe asi 10 let. Poznaly jsme se na vysoké škole. Za tu dobu jsme spolu zvládly překonat útrapy vysokoškolského studia, cestovat a nedávno jsme dokonce překonávaly strach z řízení s pomocí kondičních jízd. Zuzky si vážím, protože je to člověk, který vás rád vyslechne a podpoří a zároveň se s ní hodně nasmějete. Taky jako jedna z mála vydrží poslouchat moje dlouhá vyprávění. \uD83D\uDE00",
             )
         }
     }

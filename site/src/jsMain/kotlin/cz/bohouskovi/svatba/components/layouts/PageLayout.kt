@@ -23,7 +23,7 @@ import org.jetbrains.compose.web.dom.Div
 
 val PageContentStyle = CssStyle {
     base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem) }
-    Breakpoint.MD { Modifier.maxWidth(60.cssRem) }
+    Breakpoint.MD { Modifier.maxWidth(100.cssRem) }
 }
 
 @Composable
