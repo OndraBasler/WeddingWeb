@@ -4,22 +4,20 @@ import kotlinx.browser.window
 
 const val RSVP_PAGE_PATH = "/rsvp"
 
-private val pagePaths = setOf(RSVP_PAGE_PATH)
+private const val LOCAL_BASE_URL = "http://localhost:8080"
+private const val GITHUB_PAGES_BASE_URL = "https://ondrabasler.github.io/WeddingWeb"
 
 fun sitePath(path: String): String {
     val normalizedPath = if (path.startsWith("/")) path else "/$path"
-    return currentSiteBasePath() + normalizedPath
+    return currentBaseUrl() + normalizedPath
 }
 
-private fun currentSiteBasePath(): String {
-    val currentPath = window.location.pathname
-        .removeSuffix("/")
-        .removeSuffix("/index.html")
+private fun currentBaseUrl(): String {
+    val currentUrl = window.location.href.removeSuffix("/")
 
-    if (currentPath.isEmpty() || currentPath == "/") return ""
-
-    return pagePaths
-        .firstOrNull { pagePath -> currentPath == pagePath || currentPath.endsWith(pagePath) }
-        ?.let { pagePath -> currentPath.removeSuffix(pagePath) }
-        ?: currentPath
+    return when {
+        currentUrl.startsWith(GITHUB_PAGES_BASE_URL) -> GITHUB_PAGES_BASE_URL
+        currentUrl.startsWith(LOCAL_BASE_URL) -> LOCAL_BASE_URL
+        else -> window.location.origin
+    }
 }
