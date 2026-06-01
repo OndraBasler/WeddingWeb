@@ -18,7 +18,6 @@ import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Ul
 
-private const val RSVP_PAGE_PATH = "/rsvp"
 private const val GOOGLE_FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4EsMY3nYfdO2HF9qIfV5jhWyDuoOy7ZZceMNDAbYovUIKkA/viewform?embedded=true"
 
 @Composable
@@ -30,7 +29,7 @@ fun RsvpPreviewSection() {
         P {
             Text("Dejte nám prosím vědět, jestli dorazíte, kolik vás bude a co pro vás máme připravit.")
         }
-        A(href = RSVP_PAGE_PATH, attrs = {
+        A(href = sitePath(RSVP_PAGE_PATH), attrs = {
             attr(
                 "style",
                 "display:inline-block;margin:0.5rem 0 2rem;padding:0.75rem 1.25rem;border-radius:999px;" +

@@ -35,7 +35,7 @@ val NavHeaderStyle = CssStyle.base {
 
 @Composable
 private fun NavLink(path: String, text: String) {
-    Link(path, text, variant = UndecoratedLinkVariant.then(UncoloredLinkVariant))
+    Link(sitePath(path), text, variant = UndecoratedLinkVariant.then(UncoloredLinkVariant))
 }
 
 @Composable
@@ -44,7 +44,7 @@ private fun MenuItems() {
     NavLink("/#o-nas", "O nás")
     NavLink("/#informace", "Informace")
     NavLink("/#harmonogram", "Harmonogram")
-    NavLink("/rsvp", "RSVP")
+    NavLink(RSVP_PAGE_PATH, "RSVP")
     NavLink("/#galerie", "Galerie")
     NavLink("/#kontakty", "Kontakty")
 }
