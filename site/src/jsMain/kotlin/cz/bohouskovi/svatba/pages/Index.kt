@@ -11,7 +11,7 @@ import com.varabyte.kobweb.core.layout.Layout
 import cz.bohouskovi.svatba.components.sections.*
 
 @InitRoute
-fun initHomePage(ctx: InitRouteContext) {
+fun initHomePage(@Suppress("UNUSED_PARAMETER") ctx: InitRouteContext) {
 }
 
 @Page
@@ -24,10 +24,10 @@ fun HomePage() {
         ONasSection()
         DecorationImage("wedding_decoration_apples.webp")
         InformaceSection()
+        RsvpPreviewSection()
         TransportInfoSection()
         AccomodationSection()
         HarmonogramSection()
-        RsvpSection()
         DecorationImage("wedding_decoration_field.webp")
         GalerieSection()
         KontaktySection()

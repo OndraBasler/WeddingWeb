@@ -2,7 +2,6 @@ package cz.bohouskovi.svatba.components.sections
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.TextAlign
-import com.varabyte.kobweb.compose.css.WhiteSpace
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -32,21 +31,11 @@ fun Footer(modifier: Modifier = Modifier) {
     Box(FooterStyle.toModifier().then(modifier), contentAlignment = Alignment.Center) {
         Span(Modifier.textAlign(TextAlign.Center).toAttrs()) {
             val sitePalette = ColorMode.current.toSitePalette()
-            SpanText("Built with ")
+            SpanText("Powered by Ondřej Basler © 2026 · ")
             Link(
-                path = "https://github.com/varabyte/kobweb",
-                text = "Kobweb",
+                path = "https://github.com/OndraBasler",
+                text = "GitHub",
                 modifier = Modifier.setVariable(ColorVar, sitePalette.brand.primary),
-                variant = UncoloredLinkVariant
-            )
-            SpanText(", template designed by ")
-
-            // Huge thanks to UI Rocket (https://ui-rocket.com) for putting this great template design together for us!
-            // If you like what you see here and want help building your own site, consider checking out their services.
-            Link(
-                path = "https://ui-rocket.com",
-                text = "UI Rocket",
-                modifier = Modifier.setVariable(ColorVar, sitePalette.brand.accent).whiteSpace(WhiteSpace.NoWrap),
                 variant = UncoloredLinkVariant
             )
         }

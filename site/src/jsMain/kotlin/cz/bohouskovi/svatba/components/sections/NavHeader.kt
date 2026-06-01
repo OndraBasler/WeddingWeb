@@ -1,7 +1,6 @@
 package cz.bohouskovi.svatba.components.sections
 
 import androidx.compose.runtime.*
-import com.varabyte.kobweb.browser.dom.ElementTarget
 import com.varabyte.kobweb.compose.css.functions.clamp
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.foundation.layout.Row
@@ -12,15 +11,11 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.icons.CloseIcon
 import com.varabyte.kobweb.silk.components.icons.HamburgerIcon
-import com.varabyte.kobweb.silk.components.icons.MoonIcon
-import com.varabyte.kobweb.silk.components.icons.SunIcon
 import com.varabyte.kobweb.silk.components.navigation.Link
 import com.varabyte.kobweb.silk.components.navigation.UncoloredLinkVariant
 import com.varabyte.kobweb.silk.components.navigation.UndecoratedLinkVariant
 import com.varabyte.kobweb.silk.components.overlay.Overlay
 import com.varabyte.kobweb.silk.components.overlay.OverlayVars
-import com.varabyte.kobweb.silk.components.overlay.PopupPlacement
-import com.varabyte.kobweb.silk.components.overlay.Tooltip
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.animation.Keyframes
 import com.varabyte.kobweb.silk.style.animation.toAnimation
@@ -45,13 +40,13 @@ private fun NavLink(path: String, text: String) {
 
 @Composable
 private fun MenuItems() {
-    NavLink("#uvod", "Úvod")
-    NavLink("#o-nas", "O nás")
-    NavLink("#informace", "Informace")
-    NavLink("#harmonogram", "Harmonogram")
-    NavLink("#rsvp", "RSVP")
-    NavLink("#galerie", "Galerie")
-    NavLink("#kontakty", "Kontakty")
+    NavLink("/#uvod", "Úvod")
+    NavLink("/#o-nas", "O nás")
+    NavLink("/#informace", "Informace")
+    NavLink("/#harmonogram", "Harmonogram")
+    NavLink("/rsvp", "RSVP")
+    NavLink("/#galerie", "Galerie")
+    NavLink("/#kontakty", "Kontakty")
 }
 
 @Composable

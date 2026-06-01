@@ -18,7 +18,29 @@ import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 import org.jetbrains.compose.web.dom.Ul
 
+private const val RSVP_PAGE_PATH = "/rsvp"
 private const val GOOGLE_FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4EsMY3nYfdO2HF9qIfV5jhWyDuoOy7ZZceMNDAbYovUIKkA/viewform?embedded=true"
+
+@Composable
+fun RsvpPreviewSection() {
+    Column(
+        modifier = Modifier.fillMaxWidth().id("rsvp"),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        P {
+            Text("Dejte nám prosím vědět, jestli dorazíte, kolik vás bude a co pro vás máme připravit.")
+        }
+        A(href = RSVP_PAGE_PATH, attrs = {
+            attr(
+                "style",
+                "display:inline-block;margin:0.5rem 0 2rem;padding:0.75rem 1.25rem;border-radius:999px;" +
+                    "background:#7b4a34;color:white;text-decoration:none;font-weight:700;box-shadow:0 0.45rem 1rem rgba(123,74,52,0.22);"
+            )
+        }) {
+            Text("Vyplnit RSVP")
+        }
+    }
+}
 
 @Composable
 fun RsvpSection() {
@@ -30,7 +52,7 @@ fun RsvpSection() {
             H6 { Text("RSVP") }
         }
         P {
-            Text("Prosíme, potvrďte nám účast vyplněním krátkého formuláře. Pomůže nám to doladit jídlo, ubytování i dopravu.")
+            Text("Prosíme, potvrďte nám účast vyplněním krátkého formuláře. Pomůže nám to doladit jídlo, ubytování i dopravu. Stačí, když to vyplní jeden zástupce ve skupince.")
         }
         Div(attrs = {
             attr(
