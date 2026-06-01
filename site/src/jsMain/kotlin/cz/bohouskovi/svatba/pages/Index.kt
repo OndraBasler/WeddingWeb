@@ -22,15 +22,14 @@ fun HomePage() {
         DecorationImage("wedding_decoration_kno.webp")
         UvodSection()
         ONasSection()
-        DecorationImage("wedding_decoration_apples.webp")
         InformaceSection()
         RsvpPreviewSection()
+        DecorationImage("wedding_decoration_apples.webp")
         TransportInfoSection()
         AccomodationSection()
         HarmonogramSection()
         DecorationImage("wedding_decoration_field.webp")
-        GalerieSection()
-        KontaktySection()
+        WitnessSection()
         DecorationImage("wedding_decoration_grass.webp")
     }
 }

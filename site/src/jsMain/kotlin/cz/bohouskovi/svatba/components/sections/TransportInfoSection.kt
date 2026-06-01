@@ -29,17 +29,17 @@ fun TransportInfoSection() {
     var isMapZoomed by remember { mutableStateOf(false) }
 
     Column(
-        modifier = Modifier.fillMaxWidth().id("transport"),
+        modifier = Modifier.fillMaxWidth().id("doprava"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Doprava a parkování") }
+            H6 { Text("Doprava") }
         }
         P {
             Text("Doprava je možná autem anebo velmi obtížně hromadnou dopravou do Bělé pod Bezdězem. Proto doporučujeme dopravu autem.")
         }
         P {
-            Text("Pro parkování je vyhrazen dostatečný počet míst v blízkosti svatebního místa. Je velmi snadné odbočku na svatební místo přejet. Pokud pojedete od Mladé Boleslavi, sjíždí se doleva. Místo je označeno sloupky z pneumatik, ale plánujeme ho vyznačit ještě lépe, aby bylo nepřehlédnutelné.")
+            Text("Pro parkování je vyhrazen dostatečný počet míst v blízkosti svatebního místa. Je velmi snadné odbočku na svatební místo přejet. Pokud pojedete od Mladé Boleslavi, sjíždí se doleva. Místo je označeno žebřiňákem s velkým nápisem \"svatba\".")
         }
 
         Img(src = "mapka_2026.webp", attrs = {

@@ -8,7 +8,6 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.silk.style.toAttrs
 import cz.bohouskovi.svatba.HeadlineTextStyle
-import cz.bohouskovi.svatba.SubheadlineTextStyle
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H6
@@ -22,7 +21,7 @@ fun InformaceSection() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Informace") }
+            H6 { Text("Základní informace") }
         }
         P {
             Text("Celá svatba bude probíhat na jednom místě, a to v Chalupě v Podbezdězí.")
@@ -32,6 +31,10 @@ fun InformaceSection() {
             Text("Pokud bude hezké počasí, bude obřad probíhat v sadu u chalupy. V případě deště se na obřad přesuneme do stodoly.")
             Br()
             Text("Končit budeme v neděli dopoledne v 11:00.")
+        }
+
+        P {
+            Text("Budeme rádi, když zvolíte oblečení, ve kterém se cítíte dobře a které se hodí ke slavnostní příležitosti. Formální dress code nestanovujeme – přijďte tak, jak to cítíte.")
         }
     }
 }

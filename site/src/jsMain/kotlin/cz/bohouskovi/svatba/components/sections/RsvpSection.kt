@@ -27,7 +27,7 @@ fun RsvpPreviewSection() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         P {
-            Text("Dejte nám prosím vědět, jestli dorazíte, kolik vás bude a co pro vás máme připravit.")
+            Text("Zde prosím vyplňte dotazník ohledně účasti na naší svatbě:")
         }
         A(href = sitePath(RSVP_PAGE_PATH), attrs = {
             attr(

@@ -45,7 +45,9 @@ fun initSiteStyles(ctx: InitSilkContext) {
     }
 
     ctx.stylesheet.registerStyleBase("p") {
-        Modifier.textAlign(TextAlign.Center)
+        Modifier
+            .textAlign(TextAlign.Center)
+            .padding(leftRight = 4.cssRem)
     }
 
     // Silk dividers only extend 90% by default; we want full width dividers in our site

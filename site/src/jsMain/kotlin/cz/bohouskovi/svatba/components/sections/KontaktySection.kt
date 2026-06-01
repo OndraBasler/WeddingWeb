@@ -42,15 +42,14 @@ private fun WitnessItem(
 }
 
 @Composable
-fun KontaktySection() {
+fun WitnessSection() {
     Column(
-        modifier = Modifier.fillMaxWidth().id("kontakty"),
+        modifier = Modifier.fillMaxWidth().id("svedci"),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Kontakty") }
+            H6 { Text("Svědci") }
         }
-        P { Text("Pokud byste měli jakékoliv dotazy k čemukoliv a svědci zrovna nepodepisovali svatební archy, tak vám rádi pomůžou.") }
 
         FlexBoxLayout {
             WitnessItem(

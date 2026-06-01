@@ -40,13 +40,14 @@ private fun NavLink(path: String, text: String) {
 
 @Composable
 private fun MenuItems() {
-    NavLink("/#uvod", "Úvod")
+    NavLink("/#uvod", "Kdy a kde")
     NavLink("/#o-nas", "O nás")
-    NavLink("/#informace", "Informace")
-    NavLink("/#harmonogram", "Harmonogram")
+    NavLink("/#informace", "Základní informace")
     NavLink(RSVP_PAGE_PATH, "RSVP")
-    NavLink("/#galerie", "Galerie")
-    NavLink("/#kontakty", "Kontakty")
+    NavLink("/#doprava", "Doprava")
+    NavLink("/#ubytovani", "Ubytování")
+    NavLink("/#harmonogram", "Harmonogram")
+    NavLink("/#svedci", "Svědci")
 }
 
 @Composable

@@ -21,7 +21,7 @@ val DecorationImageStyle = CssStyle.base {
 @Composable
 fun DecorationImage(src: String) {
     Div(attrs = {
-        attr("style", "width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;")
+        attr("style", "width:100%;")
     }) {
         Img(src = src, attrs = DecorationImageStyle.toModifier().toAttrs())
     }

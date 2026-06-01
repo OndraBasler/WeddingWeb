@@ -22,7 +22,9 @@ import org.jetbrains.compose.web.css.vh
 import org.jetbrains.compose.web.dom.Div
 
 val PageContentStyle = CssStyle {
-    base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem) }
+    base {
+        Modifier.fillMaxWidth()
+    }
     Breakpoint.MD { Modifier.maxWidth(100.cssRem) }
 }
 
@@ -56,7 +58,9 @@ fun PageLayout(ctx: PageContext, content: @Composable ColumnScope.() -> Unit) {
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             NavHeader()
-            Div(PageContentStyle.toAttrs()) {
+            Div(PageContentStyle.toAttrs {
+                attr("style", "box-sizing:border-box;")
+            }) {
                 content()
             }
         }

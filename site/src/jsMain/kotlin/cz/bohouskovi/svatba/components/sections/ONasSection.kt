@@ -47,9 +47,11 @@ fun ONasSection() {
         }
 
         FlexBoxLayout {
-            AboutPhotoItem(src = "https://picsum.photos/id/1005/900/1600")
-            AboutPhotoItem(src = "https://picsum.photos/id/1011/900/1600")
-            AboutPhotoItem(src = "https://picsum.photos/id/1012/900/1600")
+            AboutPhotoItem(src = "bohousci_1.jpg")
+            AboutPhotoItem(src = "bohousci_2.jpg")
+            AboutPhotoItem(src = "bohousci_3.jpg")
+            AboutPhotoItem(src = "bohousci_4.jpg")
+            AboutPhotoItem(src = "bohousci_5.jpg")
         }
     }
 }

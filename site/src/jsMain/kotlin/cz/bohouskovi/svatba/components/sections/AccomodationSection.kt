@@ -18,17 +18,17 @@ import org.jetbrains.compose.web.dom.Text
 @Composable
 fun AccomodationSection() {
     Column(
-        modifier = Modifier.fillMaxWidth().id("accomodation"),
+        modifier = Modifier.fillMaxWidth().id("ubytovani"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Div(HeadlineTextStyle.toAttrs()) {
             H6 { Text("Ubytování") }
         }
         P {
-            Text("Ubytování bude možné v chalupě, na špejcharu v přístřešku v sadu a nebo si můžete postavit vlastní stan. V chalupě budou spát starší členové rodiny. Na špejchar se vejde 15 lidí a v přístřešku taky asi 10 lidí. Pokud by vám tyto možnosti nevyhovovali, je možné přespat v některém z blízkých penzionů.")
+            Text("Ubytování bude možné v chalupě, na špejcharu, v přístřešku, v sadu anebo si můžete postavit vlastní stan. V chalupě budou spát starší členové rodiny. Na špejchar se vejde 15 lidí a v přístřešku taky asi 10 lidí. Kromě ubytování v chalupě je u všech dalších možností potřeba si dovést spacák a karimatku.")
         }
         P {
-            Text("Doporučené penziony jsou:")
+            Text(" Pokud by vám tyto možnosti nevyhovovali, je možné přespat v některém z blízkých penzionů. Doporučené penziony jsou:")
             Br()
             A(href = "https://www.slaskoukarel.cz/pension-bezdez/") {
                 Text("Pension Bezděz")
