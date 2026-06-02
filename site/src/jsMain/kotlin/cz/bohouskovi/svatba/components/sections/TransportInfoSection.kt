@@ -5,10 +5,12 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import kotlinx.browser.window
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
+import com.varabyte.kobweb.compose.ui.modifiers.cursor
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.onClick
@@ -45,7 +47,7 @@ fun TransportInfoSection() {
         Img(src = "mapka_2026.webp", attrs = {
             attr(
                 "style",
-                "width:100%;max-width:48rem;aspect-ratio:16/9;object-fit:cover;border-radius:0.75rem;cursor:zoom-in;box-shadow:0 0.5rem 1.5rem rgba(0,0,0,0.18);"
+                "width:100%;max-width:48rem;border-radius:0.75rem;cursor:zoom-in;box-shadow:0 0.5rem 1.5rem rgba(0,0,0,0.18);"
             )
             attr("alt", "Mapa příjezdu a parkování")
             attr("title", "Kliknutím mapu zvětšíte")
@@ -56,6 +58,14 @@ fun TransportInfoSection() {
     }
 
     if (isMapZoomed) {
+        val isPortraitViewport = window.innerHeight > window.innerWidth
+        val zoomedMapStyle = if (isPortraitViewport) {
+            "max-width:92vh;max-height:94vw;border-radius:0.75rem;cursor:zoom-out;" +
+                "box-shadow:0 1rem 3rem rgba(0,0,0,0.35);transform:rotate(90deg);"
+        } else {
+            "max-width:94vw;max-height:92vh;border-radius:0.75rem;cursor:zoom-out;box-shadow:0 1rem 3rem rgba(0,0,0,0.35);"
+        }
+
         Overlay(
             Modifier
                 .setVariable(OverlayVars.BackgroundColor, Colors.Black.copyf(alpha = 0.8f))
@@ -69,10 +79,7 @@ fun TransportInfoSection() {
                 )
             }) {
                 Img(src = "mapka_2026.webp", attrs = {
-                    attr(
-                        "style",
-                        "max-width:94vw;max-height:92vh;border-radius:0.75rem;cursor:zoom-out;box-shadow:0 1rem 3rem rgba(0,0,0,0.35);"
-                    )
+                    attr("style", zoomedMapStyle)
                     attr("alt", "Zvětšená mapa příjezdu a parkování")
                     attr("decoding", "async")
                 })
