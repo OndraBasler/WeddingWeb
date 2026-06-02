@@ -19,7 +19,7 @@ fun initHomePage(@Suppress("UNUSED_PARAMETER") ctx: InitRouteContext) {
 @Composable
 fun HomePage() {
     Column(Modifier.fillMaxWidth()) {
-        DecorationImage("wedding_decoration_kno.webp")
+        DecorationImage("wedding_decoration_kno.webp", eager = true)
         UvodSection()
         ONasSection()
         InformaceSection()

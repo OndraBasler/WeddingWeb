@@ -19,10 +19,15 @@ val DecorationImageStyle = CssStyle.base {
 }
 
 @Composable
-fun DecorationImage(src: String) {
+fun DecorationImage(src: String, eager: Boolean = false) {
     Div(attrs = {
-        attr("style", "width:100%;")
+        attr("style", "width:100%;aspect-ratio:1600/430;overflow:hidden;")
     }) {
-        Img(src = src, attrs = DecorationImageStyle.toModifier().toAttrs())
+        Img(src = src, attrs = DecorationImageStyle.toModifier().toAttrs {
+            attr("alt", "")
+            attr("decoding", "async")
+            attr("loading", if (eager) "eager" else "lazy")
+            attr("fetchpriority", if (eager) "high" else "auto")
+        })
     }
 }

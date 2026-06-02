@@ -20,6 +20,9 @@ private fun AboutPhotoItem(src: String) {
                 "style",
                 "width:14rem;aspect-ratio:9/16;object-fit:cover;border-radius:0.75rem;"
             )
+            attr("alt", "Kamča a Ondra")
+            attr("decoding", "async")
+            attr("loading", "lazy")
         })
     }
 }

@@ -33,8 +33,11 @@ private fun WitnessItem(
         Img(src = imageSrc, attrs = {
             attr(
                 "style",
-                "width:9rem;height:9rem;border-radius:50%;margin-bottom:0.75rem;object-fit:cover;"
+                "width:9rem;height:9rem;aspect-ratio:1/1;border-radius:50%;margin-bottom:0.75rem;object-fit:cover;"
             )
+            attr("alt", name)
+            attr("decoding", "async")
+            attr("loading", "lazy")
         })
         H3 { Text(name) }
         P { Text(description) }
