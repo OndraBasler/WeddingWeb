@@ -16,17 +16,17 @@ kobweb {
         index {
             description.set("Powered by Kobweb")
             head.add {
-                link(rel = "preload", href = "/fonts/quicksand/Quicksand-Regular.ttf") {
+                link(rel = "preload", href = "fonts/quicksand/Quicksand-Regular.ttf") {
                     attributes["as"] = "font"
                     attributes["type"] = "font/ttf"
                     attributes["crossorigin"] = "anonymous"
                 }
-                link(rel = "preload", href = "/fonts/quicksand/Quicksand-SemiBold.ttf") {
+                link(rel = "preload", href = "fonts/quicksand/Quicksand-SemiBold.ttf") {
                     attributes["as"] = "font"
                     attributes["type"] = "font/ttf"
                     attributes["crossorigin"] = "anonymous"
                 }
-                link(rel = "stylesheet", href = "/fonts/faces.css")
+                link(rel = "stylesheet", href = "fonts/faces.css")
             }
         }
     }
