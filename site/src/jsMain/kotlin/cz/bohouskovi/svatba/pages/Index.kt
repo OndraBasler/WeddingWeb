@@ -29,7 +29,9 @@ fun HomePage() {
         AccomodationSection()
         HarmonogramSection()
         DecorationImage("wedding_decoration_field.webp")
+        GiftSection()
         WitnessSection()
+        SpotifyPlaylistSection()
         DecorationImage("wedding_decoration_grass.webp")
     }
 }

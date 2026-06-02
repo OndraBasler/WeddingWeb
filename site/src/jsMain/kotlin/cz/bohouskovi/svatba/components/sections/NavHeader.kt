@@ -47,7 +47,9 @@ private fun MenuItems() {
     NavLink("/#doprava", "Doprava")
     NavLink("/#ubytovani", "Ubytování")
     NavLink("/#harmonogram", "Harmonogram")
+    NavLink("/#dary", "Dary")
     NavLink("/#svedci", "Svědci")
+    NavLink("/#playlist", "Playlist")
 }
 
 @Composable

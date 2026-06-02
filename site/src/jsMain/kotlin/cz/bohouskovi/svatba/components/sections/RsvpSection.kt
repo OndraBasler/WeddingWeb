@@ -8,6 +8,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.silk.style.toAttrs
 import cz.bohouskovi.svatba.HeadlineTextStyle
+import cz.bohouskovi.svatba.components.widgets.PillLinkButton
 import org.jetbrains.compose.web.dom.A
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H6
@@ -29,15 +30,10 @@ fun RsvpPreviewSection() {
         P {
             Text("Zde prosím vyplňte dotazník ohledně účasti na naší svatbě:")
         }
-        A(href = sitePath(RSVP_PAGE_PATH), attrs = {
-            attr(
-                "style",
-                "display:inline-block;margin:0.5rem 0 2rem;padding:0.75rem 1.25rem;border-radius:999px;" +
-                    "background:#7b4a34;color:white;text-decoration:none;font-weight:700;box-shadow:0 0.45rem 1rem rgba(123,74,52,0.22);"
-            )
-        }) {
-            Text("Vyplnit RSVP")
-        }
+        PillLinkButton(
+            href = sitePath(RSVP_PAGE_PATH),
+            text = "Vyplnit RSVP",
+        )
     }
 }
 
