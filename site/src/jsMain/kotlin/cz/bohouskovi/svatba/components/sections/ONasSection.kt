@@ -8,18 +8,17 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.style.toAttrs
 import cz.bohouskovi.svatba.HeadlineTextStyle
-import cz.bohouskovi.svatba.components.widgets.FlexBoxLayout
 import org.jetbrains.compose.web.dom.*
 
 @Composable
 private fun AboutPhotoItem(src: String) {
     Div(attrs = {
-        attr("style", "display:flex;justify-content:center;padding:1rem;")
+        attr("style", "display:flex;flex:0 0 auto;justify-content:center;padding:1rem;")
     }) {
         Img(src = src, attrs = {
             attr(
                 "style",
-                "width:100%;max-width:14rem;aspect-ratio:9/16;object-fit:cover;border-radius:0.75rem;"
+                "width:14rem;aspect-ratio:9/16;object-fit:cover;border-radius:0.75rem;"
             )
         })
     }
@@ -46,7 +45,12 @@ fun ONasSection() {
             )
         }
 
-        FlexBoxLayout {
+        Div(attrs = {
+            attr(
+                "style",
+                "display:flex;flex-wrap:nowrap;justify-content:flex-start;max-width:100%;overflow-x:auto;"
+            )
+        }) {
             AboutPhotoItem(src = "bohousci_1.jpg")
             AboutPhotoItem(src = "bohousci_2.jpg")
             AboutPhotoItem(src = "bohousci_3.jpg")
