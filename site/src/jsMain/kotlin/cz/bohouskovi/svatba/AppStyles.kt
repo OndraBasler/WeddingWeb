@@ -14,6 +14,7 @@ import com.varabyte.kobweb.silk.init.registerStyleBase
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.addVariantBase
 import com.varabyte.kobweb.silk.style.base
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
 import com.varabyte.kobweb.silk.theme.modifyStyleBase
@@ -40,14 +41,31 @@ fun initSiteStyles(ctx: InitSilkContext) {
             .lineHeight(1.5)
     }
 
-    ctx.stylesheet.registerStyleBase("h6") {
-        Modifier.margin { bottom(0.5.cssRem) }
+    ctx.stylesheet.registerStyle("h6") {
+        base {
+            Modifier.margin {
+                bottom(0.5.cssRem)
+                top(2.cssRem)
+            }
+        }
+        Breakpoint.MD {
+            Modifier.margin {
+                bottom(0.5.cssRem)
+            }
+        }
     }
 
-    ctx.stylesheet.registerStyleBase("p") {
-        Modifier
-            .textAlign(TextAlign.Center)
-            .padding(leftRight = 4.cssRem)
+    ctx.stylesheet.registerStyle("p") {
+        base {
+            Modifier
+                .textAlign(TextAlign.Center)
+                .padding(leftRight = 1.cssRem)
+        }
+        Breakpoint.MD {
+            Modifier
+                .textAlign(TextAlign.Center)
+                .padding(leftRight = 4.cssRem)
+        }
     }
 
     // Silk dividers only extend 90% by default; we want full width dividers in our site

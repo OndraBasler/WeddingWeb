@@ -14,7 +14,7 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("Svatba Kamči a Ondry")
             head.add {
                 link(rel = "preload", href = "fonts/quicksand/Quicksand-Regular.ttf") {
                     attributes["as"] = "font"

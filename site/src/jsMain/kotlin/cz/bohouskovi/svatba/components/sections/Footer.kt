@@ -23,7 +23,7 @@ import org.jetbrains.compose.web.dom.Span
 val FooterStyle = CssStyle.base {
     Modifier
         .backgroundColor(colorMode.toSitePalette().nearBackground)
-        .padding(topBottom = 1.5.cssRem, leftRight = 10.percent)
+        .padding(topBottom = 0.5.cssRem, leftRight = 10.percent)
 }
 
 @Composable
@@ -31,7 +31,7 @@ fun Footer(modifier: Modifier = Modifier) {
     Box(FooterStyle.toModifier().then(modifier), contentAlignment = Alignment.Center) {
         Span(Modifier.textAlign(TextAlign.Center).toAttrs()) {
             val sitePalette = ColorMode.current.toSitePalette()
-            SpanText("Powered by Ondřej Basler © 2026 · ")
+            SpanText("Ondřej Basler © 2026 · ")
             Link(
                 path = "https://github.com/OndraBasler",
                 text = "GitHub",
