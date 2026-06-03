@@ -6,11 +6,8 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
 import org.jetbrains.compose.web.dom.Br
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.H6
+import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
@@ -20,9 +17,7 @@ fun InformaceSection() {
         modifier = Modifier.fillMaxWidth().id("informace"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Základní informace") }
-        }
+        H2 { Text("Základní informace") }
         P {
             Text("Celá svatba bude probíhat na jednom místě, a to v Chalupě v Podbezdězí.")
             Br()
@@ -32,7 +27,6 @@ fun InformaceSection() {
             Br()
             Text("Končit budeme v neděli dopoledne v 11:00.")
         }
-
         P {
             Text("Budeme rádi, když zvolíte oblečení, ve kterém se cítíte dobře a které se hodí ke slavnostní příležitosti. Formální dress code nestanovujeme – přijďte tak, jak to cítíte.")
         }

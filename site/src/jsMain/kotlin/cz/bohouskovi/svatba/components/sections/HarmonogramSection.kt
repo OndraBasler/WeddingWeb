@@ -6,10 +6,13 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
+import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
+import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.style.toModifier
+import cz.bohouskovi.svatba.FootNoteTextStyle
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.H6
+import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
@@ -88,14 +91,12 @@ fun HarmonogramSection() {
         modifier = Modifier.fillMaxWidth().id("harmonogram"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Harmonogram") }
-        }
+        H2 { Text("Harmonogram") }
 
         Div(attrs = {
             attr(
                 "style",
-                "width:100%;display:flex;justify-content:center;margin:0 auto 2rem;box-sizing:border-box;"
+                "width:95%;display:flex;justify-content:center;margin:1rem auto 0rem;box-sizing:border-box;"
             )
         }) {
             Div(attrs = {
@@ -111,7 +112,7 @@ fun HarmonogramSection() {
                 }
             }
         }
-        P {
+        P(FootNoteTextStyle.toModifier().maxWidth(48.cssRem).toAttrs()) {
             Text("* Aby naše svatební fotografie zůstaly co nejkrásnější a nic nerušilo kouzlo obřadu, prosíme vás, abyste během obřadu nepoužívali mobilní telefony ani fotoaparáty. O fotografie se postará profesionální fotograf. ")
         }
     }

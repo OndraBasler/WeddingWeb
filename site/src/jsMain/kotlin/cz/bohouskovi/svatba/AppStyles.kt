@@ -7,7 +7,6 @@ import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.silk.components.forms.ButtonStyle
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
-import com.varabyte.kobweb.silk.components.layout.HorizontalDividerStyle
 import com.varabyte.kobweb.silk.init.InitSilk
 import com.varabyte.kobweb.silk.init.InitSilkContext
 import com.varabyte.kobweb.silk.init.registerStyleBase
@@ -17,7 +16,6 @@ import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.theme.colors.palette.color
 import com.varabyte.kobweb.silk.theme.colors.palette.toPalette
-import com.varabyte.kobweb.silk.theme.modifyStyleBase
 import org.jetbrains.compose.web.css.*
 
 @InitSilk
@@ -41,16 +39,30 @@ fun initSiteStyles(ctx: InitSilkContext) {
             .lineHeight(1.5)
     }
 
-    ctx.stylesheet.registerStyle("h6") {
+    ctx.stylesheet.registerStyle("h2") {
         base {
             Modifier.margin {
-                bottom(0.5.cssRem)
-                top(2.cssRem)
+                bottom(0.cssRem)
+                top(1.5.cssRem)
             }
         }
         Breakpoint.MD {
             Modifier.margin {
-                bottom(0.5.cssRem)
+                bottom(0.cssRem)
+            }
+        }
+    }
+
+    ctx.stylesheet.registerStyle("h3") {
+        base {
+            Modifier.margin {
+                bottom(0.cssRem)
+                top(1.5.cssRem)
+            }
+        }
+        Breakpoint.MD {
+            Modifier.margin {
+                bottom(0.cssRem)
             }
         }
     }
@@ -67,15 +79,13 @@ fun initSiteStyles(ctx: InitSilkContext) {
                 .padding(leftRight = 4.cssRem)
         }
     }
-
-    // Silk dividers only extend 90% by default; we want full width dividers in our site
-    ctx.theme.modifyStyleBase(HorizontalDividerStyle) {
-        Modifier.fillMaxWidth()
-    }
 }
 
-val HeadlineTextStyle = CssStyle.base {
-    Modifier.fontSize(3.cssRem)
+val FootNoteTextStyle = CssStyle.base {
+    Modifier
+        .textAlign(TextAlign.Center)
+        .fontSize(0.875.cssRem)
+        .opacity(0.75)
 }
 
 val SubheadlineTextStyle = CssStyle.base {

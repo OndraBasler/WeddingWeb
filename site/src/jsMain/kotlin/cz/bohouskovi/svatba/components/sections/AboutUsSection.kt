@@ -5,9 +5,9 @@ import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
-import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.id
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
 import org.jetbrains.compose.web.dom.*
 
 @Composable
@@ -36,13 +36,9 @@ fun ONasSection() {
             .textAlign(TextAlign.Center),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("O nás") }
-        }
+        H2 { Text("O nás") }
 
-        P(attrs = {
-            attr("style", "max-width:48rem;margin:0 0 1.5rem 0;")
-        }) {
+        P {
             Text(
                 "V pohádkách musí princ překonat devatero řek a devatero hor, ale Ondrovi stačilo přejít Stodůlecký rybník a odvážit se na Velkou horu Ohradu, aby poznal Kamču."
             )

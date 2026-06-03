@@ -6,13 +6,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
-import org.jetbrains.compose.web.dom.Br
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.H6
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun GiftSection() {
@@ -20,9 +14,7 @@ fun GiftSection() {
         modifier = Modifier.fillMaxWidth().id("dary"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Dary") }
-        }
+        H2 { Text("Dary") }
 
         P {
             Text("S dary si nemusíte dělat starosti, veškeré vybavení domácnosti máme a jiné hmotné dary nepotřebujeme.")

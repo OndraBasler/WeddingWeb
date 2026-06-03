@@ -6,20 +6,11 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
 import cz.bohouskovi.svatba.components.widgets.PillLinkButton
-import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.H6
-import org.jetbrains.compose.web.dom.Iframe
-import org.jetbrains.compose.web.dom.Li
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Span
-import org.jetbrains.compose.web.dom.Text
-import org.jetbrains.compose.web.dom.Ul
+import org.jetbrains.compose.web.dom.*
 
-private const val GOOGLE_FORM_EMBED_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4EsMY3nYfdO2HF9qIfV5jhWyDuoOy7ZZceMNDAbYovUIKkA/viewform?embedded=true"
+private const val GOOGLE_FORM_EMBED_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSf4EsMY3nYfdO2HF9qIfV5jhWyDuoOy7ZZceMNDAbYovUIKkA/viewform?embedded=true"
 
 @Composable
 fun RsvpPreviewSection() {
@@ -43,9 +34,7 @@ fun RsvpSection() {
         modifier = Modifier.fillMaxWidth().id("rsvp"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("RSVP") }
-        }
+        H2 { Text("RSVP") }
         P {
             Text("Prosíme, potvrďte nám účast vyplněním krátkého formuláře. Pomůže nám to doladit jídlo, ubytování i dopravu. Stačí, když to vyplní jeden zástupce ve skupince.")
         }

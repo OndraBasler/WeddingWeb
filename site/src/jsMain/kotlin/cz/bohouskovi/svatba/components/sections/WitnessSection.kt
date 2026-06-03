@@ -6,10 +6,11 @@ import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
 import cz.bohouskovi.svatba.components.widgets.FlexBoxLayout
-import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.AlignItems
+import org.jetbrains.compose.web.css.DisplayStyle
+import org.jetbrains.compose.web.css.FlexDirection
+import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.*
 
 private val WitnessItemStyle = Modifier
@@ -33,7 +34,7 @@ private fun WitnessItem(
         Img(src = imageSrc, attrs = {
             attr(
                 "style",
-                "width:9rem;height:9rem;aspect-ratio:1/1;border-radius:50%;margin-bottom:0.75rem;object-fit:cover;"
+                "width:9rem;height:9rem;aspect-ratio:1/1;border-radius:50%;margin-bottom:0rem;object-fit:cover;"
             )
             attr("alt", name)
             attr("decoding", "async")
@@ -50,9 +51,7 @@ fun WitnessSection() {
         modifier = Modifier.fillMaxWidth().id("svedci"),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Svědci") }
-        }
+        H2 { Text("Svědci") }
 
         FlexBoxLayout {
             WitnessItem(

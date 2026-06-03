@@ -6,14 +6,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
-import com.varabyte.kobweb.silk.style.toAttrs
-import cz.bohouskovi.svatba.HeadlineTextStyle
-import org.jetbrains.compose.web.dom.A
-import org.jetbrains.compose.web.dom.Br
-import org.jetbrains.compose.web.dom.Div
-import org.jetbrains.compose.web.dom.H6
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.*
 
 @Composable
 fun AccomodationSection() {
@@ -21,9 +14,7 @@ fun AccomodationSection() {
         modifier = Modifier.fillMaxWidth().id("ubytovani"),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Ubytování") }
-        }
+        H2 { Text("Ubytování") }
         P {
             Text("Ubytování bude možné v chalupě, na špejcharu, v přístřešku anebo si můžete postavit vlastní stan v sadu. V chalupě budou spát starší členové rodiny. Na špejchar se vejde 15 lidí a v přístřešku taky asi 10 lidí. Kromě ubytování v chalupě je u všech dalších možností potřeba si dovést spacák a karimatku.")
         }
