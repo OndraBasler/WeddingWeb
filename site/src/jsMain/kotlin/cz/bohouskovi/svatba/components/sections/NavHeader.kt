@@ -35,14 +35,17 @@ val NavHeaderStyle = CssStyle.base {
 
 @Composable
 private fun NavLink(path: String, text: String) {
-    Link(sitePath(path), text, variant = UndecoratedLinkVariant.then(UncoloredLinkVariant))
+    Link(
+        path = sitePath(path),
+        text = text,
+        variant = UndecoratedLinkVariant.then(UncoloredLinkVariant)
+    )
 }
 
 @Composable
 private fun MenuItems() {
-    NavLink("/#uvod", "Kdy a kde")
     NavLink("/#o-nas", "O nás")
-    NavLink("/#informace", "Základní informace")
+    NavLink("/#informace", "Info")
     NavLink(RSVP_PAGE_PATH, "RSVP")
     NavLink("/#doprava", "Doprava")
     NavLink("/#ubytovani", "Ubytování")
@@ -132,7 +135,6 @@ private fun SideMenu(menuState: SideMenuState, close: () -> Unit, onAnimationEnd
             Column(
                 Modifier
                     .fillMaxHeight()
-                    .width(clamp(8.cssRem, 33.percent, 10.cssRem))
                     .align(Alignment.CenterEnd)
                     // Close button will appear roughly over the hamburger button, so the user can close
                     // things without moving their finger / cursor much.

@@ -35,13 +35,9 @@ private fun UvodInfoItem(iconSrc: String, text: String) {
 @Composable
 fun UvodSection() {
     Column(
-        modifier = Modifier.fillMaxWidth().id("uvod"),
+        modifier = Modifier.fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Div(HeadlineTextStyle.toAttrs()) {
-            H6 { Text("Kdy a kde") }
-        }
-
         FlexBoxLayout {
             UvodInfoItem(
                 iconSrc = "ic_clock_48.svg",
