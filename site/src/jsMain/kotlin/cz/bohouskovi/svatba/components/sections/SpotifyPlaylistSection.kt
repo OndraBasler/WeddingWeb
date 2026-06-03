@@ -14,7 +14,7 @@ import org.jetbrains.compose.web.dom.H6
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
 
-private const val SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/"
+private const val SPOTIFY_PLAYLIST_URL = "https://open.spotify.com/playlist/5dVDLaWIyam0lDZ3kdcfop?si=2d041a3619c9405d&pt=0505e160da94c273facee1936831ed98"
 
 @Composable
 fun SpotifyPlaylistSection() {
