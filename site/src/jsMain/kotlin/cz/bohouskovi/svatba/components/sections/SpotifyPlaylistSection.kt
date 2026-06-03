@@ -1,14 +1,25 @@
 package cz.bohouskovi.svatba.components.sections
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.FontSize
+import com.varabyte.kobweb.compose.css.Opacity
+import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Column
 import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.fontSize
 import com.varabyte.kobweb.compose.ui.modifiers.id
+import com.varabyte.kobweb.compose.ui.modifiers.margin
+import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
+import com.varabyte.kobweb.compose.ui.modifiers.opacity
+import com.varabyte.kobweb.compose.ui.modifiers.textAlign
+import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.style.toAttrs
 import cz.bohouskovi.svatba.HeadlineTextStyle
 import cz.bohouskovi.svatba.components.widgets.PillLinkButton
+import org.jetbrains.compose.web.css.cssRem
+import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.H6
 import org.jetbrains.compose.web.dom.P
@@ -26,9 +37,13 @@ fun SpotifyPlaylistSection() {
             H6 { Text("Svatební playlist") }
         }
 
-        P(attrs = {
-            attr("style", "max-width:48rem;margin:0 0 1rem 0;text-align:center;")
-        }) {
+        P(
+            attrs = Modifier
+                .maxWidth(48.cssRem)
+                .margin(top = 0.px, bottom = 1.cssRem)
+                .textAlign(TextAlign.Center)
+                .toAttrs()
+        ) {
             Text("Pomozte nám roztančit večer! Pokud máte písničku, která podle vás nesmí na svatbě chybět, přidejte ji prosím do našeho společného Spotify playlistu.")
         }
 
@@ -36,6 +51,17 @@ fun SpotifyPlaylistSection() {
             href = SPOTIFY_PLAYLIST_URL,
             text = "Přidat písničku na Spotify",
             openInNewTab = true,
+            bottomMargin = 0.cssRem,
         )
+
+        P(
+            attrs = Modifier
+                .textAlign(TextAlign.Center)
+                .fontSize(0.875.cssRem)
+                .opacity(0.75)
+                .toAttrs()
+        ) {
+            Text("Pokud by odkaz přestal fungovat, dejte nám prosím vědět.")
+        }
     }
 }
