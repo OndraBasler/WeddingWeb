@@ -54,11 +54,11 @@ fun ONasSection() {
                 "display:flex;flex-wrap:nowrap;justify-content:flex-start;max-width:100%;overflow-x:auto;"
             )
         }) {
-            AboutPhotoItem(src = "bohousci_1.jpg")
-            AboutPhotoItem(src = "bohousci_2.jpg")
-            AboutPhotoItem(src = "bohousci_3.jpg")
-            AboutPhotoItem(src = "bohousci_4.jpg")
-            AboutPhotoItem(src = "bohousci_5.jpg")
+            AboutPhotoItem(src = "bohousci_1.webp")
+            AboutPhotoItem(src = "bohousci_2.webp")
+            AboutPhotoItem(src = "bohousci_3.webp")
+            AboutPhotoItem(src = "bohousci_4.webp")
+            AboutPhotoItem(src = "bohousci_5.webp")
         }
     }
 }
