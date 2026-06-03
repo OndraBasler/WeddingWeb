@@ -9,7 +9,6 @@ import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.toModifier
 import org.jetbrains.compose.web.css.DisplayStyle
-import org.jetbrains.compose.web.dom.Div
 import org.jetbrains.compose.web.dom.Img
 
 val DecorationImageStyle = CssStyle.base {
@@ -19,15 +18,18 @@ val DecorationImageStyle = CssStyle.base {
 }
 
 @Composable
-fun DecorationImage(src: String, eager: Boolean = false) {
-    Div(attrs = {
-        attr("style", "width:100%;")
-    }) {
-        Img(src = src, attrs = DecorationImageStyle.toModifier().toAttrs {
+fun DecorationImage(
+    src: String,
+    modifier: Modifier = Modifier,
+    eager: Boolean = false
+) {
+    Img(
+        src = src,
+        attrs = modifier.then(DecorationImageStyle.toModifier()).toAttrs {
             attr("alt", "")
             attr("decoding", "async")
             attr("loading", if (eager) "eager" else "lazy")
             attr("fetchpriority", if (eager) "high" else "auto")
-        })
-    }
+        }
+    )
 }
