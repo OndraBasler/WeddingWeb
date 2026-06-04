@@ -31,7 +31,7 @@ fun HomePage() {
             eager = true,
             modifier = Modifier.padding(leftRight = 4.cssRem).maxSize(40.cssRem)
         )
-        UvodSection()
+        IntroSection()
         ONasSection()
         InformaceSection()
         RsvpPreviewSection()

@@ -19,7 +19,7 @@ fun InformaceSection() {
     ) {
         H2 { Text("Základní informace") }
         P {
-            Text("Celá svatba bude probíhat na jednom místě, a to v Chalupě v Podbezdězí.")
+            Text("Svatba bude probíhat na Chalupě v Podbezdězí.")
             Br()
             Text("V sobotu se bude začínat obřadem ve 12:00. Prosíme všechny hosty, aby dorazili nejpozději do 11:30, abychom mohli společně zahájit obřad včas.")
             Br()
