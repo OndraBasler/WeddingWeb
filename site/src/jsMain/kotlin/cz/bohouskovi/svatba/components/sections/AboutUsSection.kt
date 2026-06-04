@@ -28,7 +28,7 @@ private fun AboutPhotoItem(src: String) {
 }
 
 @Composable
-fun ONasSection() {
+fun AboutUsSection() {
     Column(
         modifier = Modifier
             .fillMaxWidth()

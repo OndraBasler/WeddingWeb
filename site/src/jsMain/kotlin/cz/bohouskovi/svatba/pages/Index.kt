@@ -32,7 +32,7 @@ fun HomePage() {
             modifier = Modifier.padding(leftRight = 4.cssRem).maxSize(40.cssRem)
         )
         IntroSection()
-        ONasSection()
+        AboutUsSection()
         InformaceSection()
         RsvpPreviewSection()
         DecorationImage("wedding_decoration_apples.webp")
