@@ -12,6 +12,9 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
+import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.Br
@@ -28,18 +31,24 @@ private val infoTextModifier = Modifier
     .styleModifier { property("letter-spacing", "0.08em") }
     .styleModifier { property("text-transform", "uppercase") }
 
-private val dividerModifier = Modifier
+private val verticalDividerModifier = Modifier
     .width(1.px)
     .styleModifier { property("align-self", "stretch") }
     .backgroundColor(textColor)
     .opacity(0.35)
     .flexShrink(0)
 
+private val horizontalDividerModifier = Modifier
+    .height(1.px)
+    .styleModifier { property("align-self", "stretch") }
+    .backgroundColor(textColor)
+    .opacity(0.35)
+
 @Composable
 fun IntroSection() {
     Column(
         modifier = Modifier
-            .fillMaxWidth()
+            .padding(bottom = 4.cssRem)
             .styleModifier { property("min-height", "100svh") },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -55,8 +64,37 @@ fun IntroSection() {
                 .styleModifier { property("object-fit", "contain") }
         )
 
+        // Mobile: column with horizontal divider
+        Column(
+            modifier = Modifier.displayUntil(Breakpoint.MD),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Span(
+                infoTextModifier
+                    .textAlign(TextAlign.Center)
+                    .padding(topBottom = 1.cssRem, leftRight = 2.cssRem)
+                    .toAttrs()
+            ) {
+                Text("22. – 23. 8. 2026")
+            }
+            Span(horizontalDividerModifier.toAttrs()) {}
+            Span(
+                infoTextModifier
+                    .textAlign(TextAlign.Start)
+                    .padding(topBottom = 1.cssRem, leftRight = 2.cssRem)
+                    .toAttrs()
+            ) {
+                Text("Chalupa v Podbezdězí,")
+                Br()
+                Text("Hlínoviště 3,")
+                Br()
+                Text("Bělá pod Bezdězem")
+            }
+        }
+
+        // Desktop: row with vertical divider
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().displayIfAtLeast(Breakpoint.MD),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Span(
@@ -69,7 +107,7 @@ fun IntroSection() {
                 Text("22. – 23. 8. 2026")
             }
 
-            Span(dividerModifier.toAttrs()) {}
+            Span(verticalDividerModifier.toAttrs()) {}
 
             Span(
                 infoTextModifier
@@ -85,6 +123,5 @@ fun IntroSection() {
                 Text("Bělá pod Bezdězem")
             }
         }
-        Span(Modifier.toAttrs()) {}
     }
 }

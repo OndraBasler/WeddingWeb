@@ -36,7 +36,9 @@ fun RsvpSection() {
     ) {
         H2 { Text("RSVP") }
         P {
-            Text("Prosíme, potvrďte nám účast vyplněním krátkého formuláře. Pomůže nám to doladit jídlo, ubytování i dopravu. Stačí, když to vyplní jeden zástupce ve skupince.")
+            Text("Potvrďte nám účast vyplněním krátkého formuláře. Stačí, když dotazník vyplní jeden zástupce za skupiny.")
+            Br()
+            Text("Prosíme o vyplnění do 30.6.")
         }
 
         Iframe(attrs = {
