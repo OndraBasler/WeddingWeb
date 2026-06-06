@@ -38,24 +38,7 @@ fun RsvpSection() {
         P {
             Text("Prosíme, potvrďte nám účast vyplněním krátkého formuláře. Pomůže nám to doladit jídlo, ubytování i dopravu. Stačí, když to vyplní jeden zástupce ve skupince.")
         }
-        Div(attrs = {
-            attr(
-                "style",
-                "width:100%;max-width:48rem;margin:1rem auto;padding:1rem 1.25rem;border-radius:0.75rem;background:rgba(255,255,255,0.72);box-shadow:0 0.5rem 1.5rem rgba(0,0,0,0.08);box-sizing:border-box;"
-            )
-        }) {
-            P(attrs = { attr("style", "margin-top:0;text-align:left;font-weight:600;") }) {
-                Text("Ve formuláři se vás zeptáme na:")
-            }
-            Ul(attrs = { attr("style", "margin:0;padding-left:1.25rem;line-height:1.7;") }) {
-                RsvpQuestion("Kolik vás bude", "děti a dospělí zvlášť")
-                RsvpQuestion("Na jak dlouho se zdržíte", "od obřadu až po nedělní dopoledne")
-                RsvpQuestion("Co si dáte k obědu", "svíčková nebo pečené kuřecí maso")
-                RsvpQuestion("Jaké ubytování preferujete", "chalupa, stan, špejchar, penzion nebo bez ubytování")
-                RsvpQuestion("Jak se k nám dostanete", "autem, spolujízda nebo hromadná doprava")
-                RsvpQuestion("Nápad do fotokoutku", "rekvizita nebo citát")
-            }
-        }
+
         Iframe(attrs = {
             attr("src", GOOGLE_FORM_EMBED_URL)
             attr("width", "100%")
