@@ -8,6 +8,7 @@ import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.textAlign
+import cz.bohouskovi.svatba.components.widgets.ProtectedImage
 import org.jetbrains.compose.web.dom.*
 
 @Composable
@@ -15,12 +16,11 @@ private fun AboutPhotoItem(src: String) {
     Div(attrs = {
         attr("style", "display:flex;flex:0 0 auto;justify-content:center;padding:1rem;")
     }) {
-        Img(src = src, attrs = {
+        ProtectedImage(src = src, alt = "Kamča a Ondra", attrsBuilder = {
             attr(
                 "style",
                 "width:14rem;aspect-ratio:9/16;object-fit:cover;border-radius:0.75rem;"
             )
-            attr("alt", "Kamča a Ondra")
             attr("decoding", "async")
             attr("loading", "lazy")
         })

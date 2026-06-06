@@ -7,6 +7,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import cz.bohouskovi.svatba.components.widgets.FlexBoxLayout
+import cz.bohouskovi.svatba.components.widgets.ProtectedImage
 import org.jetbrains.compose.web.css.AlignItems
 import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.FlexDirection
@@ -31,12 +32,11 @@ private fun WitnessItem(
         modifier = WitnessItemStyle,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Img(src = imageSrc, attrs = {
+        ProtectedImage(src = imageSrc, alt = name, attrsBuilder = {
             attr(
                 "style",
                 "width:9rem;height:9rem;aspect-ratio:1/1;border-radius:50%;margin-bottom:0rem;object-fit:cover;"
             )
-            attr("alt", name)
             attr("decoding", "async")
             attr("loading", "lazy")
         })

@@ -4,12 +4,11 @@ import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.modifiers.display
 import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
-import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.toModifier
+import cz.bohouskovi.svatba.components.widgets.ProtectedImage
 import org.jetbrains.compose.web.css.DisplayStyle
-import org.jetbrains.compose.web.dom.Img
 
 val DecorationImageStyle = CssStyle.base {
     Modifier
@@ -23,10 +22,10 @@ fun DecorationImage(
     modifier: Modifier = Modifier,
     eager: Boolean = false
 ) {
-    Img(
+    ProtectedImage(
         src = src,
-        attrs = modifier.then(DecorationImageStyle.toModifier()).toAttrs {
-            attr("alt", "")
+        modifier = modifier.then(DecorationImageStyle.toModifier()),
+        attrsBuilder = {
             attr("decoding", "async")
             attr("loading", if (eager) "eager" else "lazy")
             attr("fetchpriority", if (eager) "high" else "auto")

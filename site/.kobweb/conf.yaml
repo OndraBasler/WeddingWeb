@@ -1,6 +1,6 @@
 site:
   title: "Svatební web"
-  basePath: "WeddingWeb"
+  basePath: ""
 
 server:
   files:

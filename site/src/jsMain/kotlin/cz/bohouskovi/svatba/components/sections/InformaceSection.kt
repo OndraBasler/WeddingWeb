@@ -25,7 +25,7 @@ fun InformaceSection() {
             Br()
             Text("Pokud bude hezké počasí, bude obřad probíhat v sadu u chalupy. V případě deště se na obřad přesuneme do stodoly.")
             Br()
-            Text("Končit budeme v neděli dopoledne v 11:00.")
+            Text("Končit budeme v neděli dopoledne okolo 11:00.")
         }
         P {
             Text("Budeme rádi, když zvolíte oblečení, ve kterém se cítíte dobře a které se hodí ke slavnostní příležitosti. Formální dress code nestanovujeme – přijďte tak, jak to cítíte.")

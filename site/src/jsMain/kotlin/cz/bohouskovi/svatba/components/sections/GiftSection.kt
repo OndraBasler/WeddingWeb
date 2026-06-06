@@ -24,13 +24,9 @@ fun GiftSection() {
             Text("Pokud byste nás chtěli podpořit finančně, můžete tak učinit na místě nebo pomocí QR kódu níže.")
         }
 
-        Div(attrs = {
-            attr(
-                "style",
-                "color:red;font-weight:700;font-size:2rem;margin-top:1rem;"
-            )
-        }) {
-            Text("TBD")
-        }
+        Img(src = "qr_code.webp", attrs = {
+            attr("alt", "QR kód pro platbu")
+            attr("style", "width:12rem;height:12rem;object-fit:contain;")
+        })
     }
 }

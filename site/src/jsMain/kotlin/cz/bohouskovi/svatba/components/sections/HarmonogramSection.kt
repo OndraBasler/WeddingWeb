@@ -28,7 +28,7 @@ private val timelineItems = listOf(
     TimelineItem("14:30", "Focení novomanželů"),
     TimelineItem("15:30", "Hod kytky, dort"),
     TimelineItem("17:00", "Hry s novomanžely, otevření rautu"),
-    TimelineItem("19:00–00:00", "První tanec, grilovačka a velká párty a případně zpívání"),
+    TimelineItem("19:00–00:00", "První tanec, grilovačka, zpívání a párty"),
 )
 
 @Composable

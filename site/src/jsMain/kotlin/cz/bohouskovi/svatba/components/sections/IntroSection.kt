@@ -48,6 +48,7 @@ private val horizontalDividerModifier = Modifier
 fun IntroSection() {
     Column(
         modifier = Modifier
+            .fillMaxWidth()
             .padding(bottom = 4.cssRem)
             .styleModifier { property("min-height", "100svh") },
         horizontalAlignment = Alignment.CenterHorizontally,
