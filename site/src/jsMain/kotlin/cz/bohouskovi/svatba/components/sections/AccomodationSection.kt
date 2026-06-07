@@ -19,7 +19,7 @@ fun AccomodationSection() {
             Text("Ubytování bude možné v chalupě, na špejcharu, v přístřešku anebo si můžete postavit vlastní stan v sadu. V chalupě budou spát starší členové rodiny. Na špejchar se vejde 15 lidí a v přístřešku taky asi 10 lidí. Kromě ubytování v chalupě je u všech dalších možností potřeba si dovést spacák a karimatku.")
         }
         P {
-            Text(" Pokud by vám tyto možnosti nevyhovovali, je možné přespat v některém z blízkých penzionů. Doporučené penziony jsou:")
+            Text("Pokud by vám tyto možnosti nevyhovovaly, je možné přespat v některém z blízkých penzionů. Doporučené penziony jsou:")
             Br()
             A(href = "https://www.slaskoukarel.cz/pension-bezdez/") {
                 Text("Pension Bezděz")
