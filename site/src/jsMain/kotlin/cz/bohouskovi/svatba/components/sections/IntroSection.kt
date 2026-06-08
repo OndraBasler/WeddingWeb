@@ -1,6 +1,7 @@
 package cz.bohouskovi.svatba.components.sections
 
 import androidx.compose.runtime.Composable
+import com.varabyte.kobweb.compose.css.AnimationIterationCount
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -12,16 +13,23 @@ import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.style.animation.Keyframes
+import com.varabyte.kobweb.silk.style.animation.toAnimation
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.style.breakpoint.displayIfAtLeast
 import com.varabyte.kobweb.silk.style.breakpoint.displayUntil
-import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.css.*
 import org.jetbrains.compose.web.dom.Br
 import org.jetbrains.compose.web.dom.Span
 import org.jetbrains.compose.web.dom.Text
 
 private val textColor = Color.rgb(0x465752)
+
+val ScrollArrowBounceAnim = Keyframes {
+    0.percent { Modifier.translateY(0.px) }
+    50.percent { Modifier.translateY(10.px) }
+    100.percent { Modifier.translateY(0.px) }
+}
 
 private val infoTextModifier = Modifier
     .fontSize(1.cssRem)
@@ -50,7 +58,8 @@ fun IntroSection() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(bottom = 4.cssRem)
-            .styleModifier { property("min-height", "100svh") },
+            .styleModifier { property("min-height", "100svh") }
+            .position(Position.Relative),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
@@ -123,6 +132,29 @@ fun IntroSection() {
                 Br()
                 Text("Bělá pod Bezdězem")
             }
+        }
+
+        Span(
+            Modifier
+                .position(Position.Absolute)
+                .styleModifier { property("bottom", "8rem") }
+                .styleModifier { property("left", "50%") }
+                .styleModifier { property("transform", "translateX(-50%)") }
+                .styleModifier { property("user-select", "none") }
+                .styleModifier { property("pointer-events", "none") }
+                .color(textColor)
+                .opacity(0.5)
+                .fontSize(1.5.cssRem)
+                .animation(
+                    ScrollArrowBounceAnim.toAnimation(
+                        duration = 1200.ms,
+                        timingFunction = AnimationTimingFunction.EaseInOut,
+                        iterationCount = AnimationIterationCount.Infinite,
+                    )
+                )
+                .toAttrs()
+        ) {
+            Text("↓")
         }
     }
 }
