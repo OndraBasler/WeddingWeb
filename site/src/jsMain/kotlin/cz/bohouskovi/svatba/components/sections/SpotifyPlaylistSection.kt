@@ -9,10 +9,12 @@ import com.varabyte.kobweb.compose.ui.modifiers.id
 import com.varabyte.kobweb.compose.ui.modifiers.maxWidth
 import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.toAttrs
+import cz.bohouskovi.svatba.components.widgets.PillLinkButton
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.H2
 import org.jetbrains.compose.web.dom.Iframe
 import org.jetbrains.compose.web.dom.P
+import org.jetbrains.compose.web.dom.Small
 import org.jetbrains.compose.web.dom.Text
 
 private const val SPOTIFY_PLAYLIST_ID = "5dVDLaWIyam0lDZ3kdcfop"
@@ -32,6 +34,22 @@ fun SpotifyPlaylistSection() {
                 .toAttrs()
         ) {
             Text("Pomozte nám roztančit večer! Pokud máte písničku, která podle vás nesmí na svatbě chybět, přidejte ji prosím do našeho společného Spotify playlistu.")
+        }
+
+        PillLinkButton(
+            href = "https://open.spotify.com/playlist/5dVDLaWIyam0lDZ3kdcfop?si=298bd0519e1d4cc6&pt=cec61d523153f93c3df5f9598a278f17",
+            text = "Přidej písničku",
+            openInNewTab = true,
+            bottomMargin = 0.cssRem,
+        )
+
+        Small(
+            attrs = Modifier
+                .maxWidth(48.cssRem)
+                .padding(topBottom = 0.5.cssRem, leftRight = 1.cssRem)
+                .toAttrs()
+        ) {
+            Text("Pokud odkaz přestane fungovat, dejte nám prosím vědět.")
         }
 
         Iframe(attrs = Modifier.padding(leftRight = 1.cssRem).toAttrs{
