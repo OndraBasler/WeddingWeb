@@ -137,7 +137,7 @@ fun IntroSection() {
         Span(
             Modifier
                 .position(Position.Absolute)
-                .styleModifier { property("bottom", "8rem") }
+                .styleModifier { property("bottom", "5rem") }
                 .styleModifier { property("left", "50%") }
                 .styleModifier { property("transform", "translateX(-50%)") }
                 .styleModifier { property("user-select", "none") }
