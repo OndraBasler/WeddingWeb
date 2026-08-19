@@ -27,6 +27,7 @@ private fun WitnessItem(
     imageSrc: String,
     name: String,
     description: String,
+    phone: String,
 ) {
     Column(
         modifier = WitnessItemStyle,
@@ -42,6 +43,9 @@ private fun WitnessItem(
         })
         H3 { Text(name) }
         P { Text(description) }
+        A(href = "tel:$phone") {
+            Text(phone)
+        }
     }
 }
 
@@ -58,11 +62,13 @@ fun WitnessSection() {
                 imageSrc = "tomik.webp",
                 name = "Tomáš Pavlín - svědek ženicha",
                 description = "S Tomíkem (prosím, oslovujte ho tak) se známe od střední. Společně jsme velcí odborníci na přetváření Silvestrovských chat v sauny a pojízdných aut v nepojízdná. Taky jsme proluštili nespočet letních nocí, takže pokud byste potřebovali poradit s luštěním svatební šifry, obraťte se na něj!",
+                phone = "+420 737 735 228"
             )
             WitnessItem(
                 imageSrc = "zuzka.webp",
                 name = "Zuzka Tipková - svědkyně nevěsty",
                 description = "Se Zuzkou se známe asi 10 let. Poznaly jsme se na vysoké škole. Za tu dobu jsme spolu zvládly překonat útrapy vysokoškolského studia, cestovat a nedávno jsme dokonce překonávaly strach z řízení s pomocí kondičních jízd. Zuzky si vážím, protože je to člověk, který vás rád vyslechne a podpoří a zároveň se s ní hodně nasmějete. Taky jako jedna z mála vydrží poslouchat moje dlouhá vyprávění. \uD83D\uDE00",
+                phone = "+420 739 906 677"
             )
         }
     }
