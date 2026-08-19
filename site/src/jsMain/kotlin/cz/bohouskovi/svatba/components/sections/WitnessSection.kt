@@ -61,7 +61,7 @@ fun WitnessSection() {
             WitnessItem(
                 imageSrc = "tomik.webp",
                 name = "Tomáš Pavlín - svědek ženicha",
-                description = "S Tomíkem (prosím, oslovujte ho tak) se známe od střední. Společně jsme velcí odborníci na přetváření Silvestrovských chat v sauny a pojízdných aut v nepojízdná. Taky jsme proluštili nespočet letních nocí, takže pokud byste potřebovali poradit s luštěním svatební šifry, obraťte se na něj!",
+                description = "S Tomíkem (prosím, oslovujte ho tak) se známe od střední. Společně jsme velcí odborníci na přetváření Silvestrovských chat v sauny a pojízdných aut v nepojízdná. Taky jsme proluštili nespočet letních nocí, takže pokud byste potřebovali poradit s luštěním svatebního kvízu, obraťte se na něj!",
                 phone = "+420 737 735 228"
             )
             WitnessItem(
