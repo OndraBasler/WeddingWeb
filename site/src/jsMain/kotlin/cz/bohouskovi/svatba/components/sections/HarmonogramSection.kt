@@ -22,13 +22,14 @@ private data class TimelineItem(
 )
 
 private val timelineItems = listOf(
-    TimelineItem("12:00–12:45", "Obřad*"),
-    TimelineItem("12:45–13:30", "Gratulace, společné focení"),
+    TimelineItem("12:00", "Obřad*"),
+    TimelineItem("12:45", "Gratulace, společné focení"),
     TimelineItem("13:30", "Přípitek, oběd"),
     TimelineItem("14:30", "Focení novomanželů"),
     TimelineItem("15:30", "Hod kytky, dort"),
-    TimelineItem("17:00", "Hry s novomanžely, otevření rautu"),
-    TimelineItem("19:00–00:00", "První tanec, grilovačka, zpívání a párty"),
+    TimelineItem("16:00", "Otevření rautu"),
+    TimelineItem("17:00", "Hry s novomanžely"),
+    TimelineItem("18:00–00:00", "První tanec, grilovačka, zpívání a párty"),
 )
 
 @Composable
