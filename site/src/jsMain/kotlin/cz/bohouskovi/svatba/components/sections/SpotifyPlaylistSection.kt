@@ -11,13 +11,9 @@ import com.varabyte.kobweb.compose.ui.modifiers.padding
 import com.varabyte.kobweb.compose.ui.toAttrs
 import cz.bohouskovi.svatba.components.widgets.PillLinkButton
 import org.jetbrains.compose.web.css.cssRem
-import org.jetbrains.compose.web.dom.H2
-import org.jetbrains.compose.web.dom.Iframe
-import org.jetbrains.compose.web.dom.P
-import org.jetbrains.compose.web.dom.Small
-import org.jetbrains.compose.web.dom.Text
+import org.jetbrains.compose.web.dom.*
 
-private const val SPOTIFY_PLAYLIST_ID = "5dVDLaWIyam0lDZ3kdcfop"
+private const val SPOTIFY_PLAYLIST_ID = "1ctD6iljDZ7sM7icHFXtSk"
 private const val SPOTIFY_EMBED_URL = "https://open.spotify.com/embed/playlist/$SPOTIFY_PLAYLIST_ID"
 
 @Composable
@@ -26,18 +22,18 @@ fun SpotifyPlaylistSection() {
         modifier = Modifier.fillMaxWidth().id("playlist").padding(bottom = 2.cssRem),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        H2 { Text("Svatební playlist") }
+        H2 { Text("Taneční playlist") }
 
         P(
             attrs = Modifier
                 .maxWidth(48.cssRem)
                 .toAttrs()
         ) {
-            Text("Pomozte nám roztančit večer! Pokud máte písničku, která podle vás nesmí na svatbě chybět, přidejte ji prosím do našeho společného Spotify playlistu.")
+            Text("Pomozte nám roztančit večer! Pokud máte písničku, na kterou si chcete zatancovat, přidejte ji prosím do našeho společného Spotify playlistu.")
         }
 
         PillLinkButton(
-            href = "https://open.spotify.com/playlist/5dVDLaWIyam0lDZ3kdcfop?si=298bd0519e1d4cc6&pt=cec61d523153f93c3df5f9598a278f17",
+            href = "https://open.spotify.com/playlist/1ctD6iljDZ7sM7icHFXtSk?si=615e96ac10e34847&pt=e75cc8d41a80906e485e65ef8901c938",
             text = "Přidej písničku",
             openInNewTab = true,
             bottomMargin = 0.cssRem,
